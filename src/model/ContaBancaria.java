@@ -12,11 +12,7 @@ public  abstract class ContaBancaria {
     protected Double saldo;
     protected ArrayList<Movimentacao> movimentacoes;
     protected Date dataAbertura;
-
-
- 
-
-    private Double VALOR_MIN_DEPOSITO = 10.00;
+    protected Double VALOR_MIN_DEPOSITO = 10.00;
 
     //#endregion
 
