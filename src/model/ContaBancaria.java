@@ -1,15 +1,17 @@
 package src.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.InputMismatchException;
 
 public  abstract class ContaBancaria {
     //#region Atributis
-    private String agencia;
-    private String conta;
-    private Integer digito;
-    private Double saldo;
-    private Date dataAbertura;
+    protected String agencia;
+    protected String conta;
+    protected Integer digito;
+    protected Double saldo;
+    protected ArrayList<Movimentacao> movimentacoes;
+    protected Date dataAbertura;
 
 
  
@@ -28,6 +30,10 @@ public  abstract class ContaBancaria {
         this.digito = digito;
         this.saldo = saldoInicial;
         this.dataAbertura = new Date();
+        this.movimentacoes = new ArrayList<Movimentacao>();
+
+        Movimentacao movimentacao = new Movimentacao("Abertura de conta", saldoInicial);
+        this.movimentacoes.add(movimentacao);
     }
     //#endregion
  
@@ -73,18 +79,18 @@ public  abstract class ContaBancaria {
         }else {
 
             this.saldo += valor ;
+            Movimentacao movimentacao = new Movimentacao("Deposito",valor);
+            this.movimentacoes.add(movimentacao);
         }
     }
 
-    public Double sacar(Double valor){
-
-
-        
+    public Double sacar(Double valor){        
         if(this.saldo < valor){
             throw new InputMismatchException("Saldo Insuficiente");
         }
-
             this.saldo -= valor;
+            Movimentacao movimentacao = new Movimentacao("Saque",valor);
+            this.movimentacoes.add(movimentacao);
 
             return valor;
     }
@@ -94,7 +100,10 @@ public  abstract class ContaBancaria {
         contaDestino.depositar((valor));
 
     }
+    
+    public abstract void imprimirExtrato();
 
+    
     
 
 }
