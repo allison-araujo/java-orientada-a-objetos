@@ -1,0 +1,32 @@
+O que é SOLId?
+
+SOLID é um termo/acronimo de 5 principios da orientacao a objetos.
+
+S -> Single Responsablity Principle -> principio de responsabilidade única
+   #Quando criar uma classe ela deve ter uma única responsabilidade;
+
+O -> Open-Closed Principle -> Principio do Aberto e Fechado
+    #Quando um method é usado em varios lugares nao alterar, 
+    algo que ja es ta em funcionamento, posso melhorar e criar um novo.
+    abertos para extensao e fechado para modificação.
+
+
+L ->  Liskov Substitution Principle -> Principio de Substituição de Liskov
+ uma classe derivada deve ser substituida pela sua classe base
+
+
+
+I -> Interface Segreggation Principle -> Principio de segregação da Interface
+    #Uma classe nao deve ser forçada a implementar a interface e metodos que nao
+irá utilizar, fazer interface especificas apenas com o methos q ira usar.
+
+
+
+D -> Dependecy Inversion Principle -> Principio da Inversao de Dependencia
+   #Tudo que depende devemos receber por parametro.
+   as classes devem depender de abstraçoes e nao implementacoes.
+
+
+
+
+
