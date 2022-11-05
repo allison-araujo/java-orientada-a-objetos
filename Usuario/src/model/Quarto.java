@@ -3,7 +3,7 @@ package src.model;
 public class Quarto {
     private String numero;
     private Double valorDiaria;
-    private String tipo;
+    private EnumType tipo;
 
 
 
@@ -19,10 +19,10 @@ public class Quarto {
     public void setValorDiaria(Double valorDiaria) {
         this.valorDiaria = valorDiaria;
     }
-    public String getTipo() {
+    public EnumType getTipo() {
         return tipo;
     }
-    public void setTipo(String tipo) {
+    public void setTipo(EnumType tipo) {
         this.tipo = tipo;
     }   
 
